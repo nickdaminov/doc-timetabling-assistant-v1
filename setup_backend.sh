@@ -1,8 +1,9 @@
 # RUNNING THIS FILE SHOULD INSTALL ALL DEV TOOLS
-# NOTE: requires global pip to operate (don't want to install pip since it will be a global thing)
-
-
 # INSTALLATION OF BACKEND
+
+# INSTALLING PIP
+echo [INSTALLING PIP]
+python get-pip.py && echo [INSTALLED PIP SUCCESSFULLY]
 
 # INSTALLS VIRTUALENV
 echo [INSTALLING VIRTUALENV]
