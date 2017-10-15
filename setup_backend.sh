@@ -22,9 +22,11 @@ echo [INSTALLING DEPENDENCIES]
 cd Backend
 ./install_dependencies.sh && echo [FINISHED INSTALLING DEPENDENCIES]
 
-# INSTALL postgresql
-echo [INSTALLING POSTGRESQL]
-sudo apt-get install postgresql && echo [INSTALLED POSTGRESQL SUCCESSFULLY]
+# SETUP DJANGO DB USER AND DATABASE
+# logs as user "postgres" and create the user and database and grants permission of the new user to it
+echo [SETTING UP DB USER AND DATABASE]
+echo [PLEASE FOLLOW INSTRUCTIONS IN THE README FILE(TO SKIP OR END TYPE "exit"]
+sudo su postgres && echo [CONTINUING SETUP]
 
 # INSTALLS FRONTEND REACT AND OTHER DEPENDENCIES
 echo [INSTALLING FRONTEND]
