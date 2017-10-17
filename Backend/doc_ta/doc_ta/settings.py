@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'doc_ta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'doctimetable_default_db',
-        'USER': 'foofighter',  # random name for
-        'PASSWORD': 'dleifynot',   # tony field in reverse
-        'HOST': 'localhost',       # TODO: change this to docker volume
-        'PORT': '',               # TODO: choose proper port
+        'NAME': 'postgres',
+        'USER': 'postgres',  # random name for
+        # 'PASSWORD': 'postgres',   # tony field in reverse
+        'HOST': 'db',       # TODO: change this to docker volume
+        'PORT': '5432',               # TODO: choose proper port
     }
 }
 
