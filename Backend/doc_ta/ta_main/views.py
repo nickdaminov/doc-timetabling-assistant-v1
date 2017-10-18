@@ -13,12 +13,12 @@ def read_from_asp_result(result_src):
 
 
 def run_clingo(input_src, output_src):
-    command_string = "./clingoFolder/clingo --outf=2 <" + input_src + ">" + output_src
+    command_string = "./asp/clingo --outf=2 <" + input_src + ">" + output_src
     os.system(command_string)
 
 
 def test_view(request):
-    input_src = "./clingoFolder/src/sudoku.in"
+    input_src = "./asp/src/sudoku.in"
     output_src = "result.out"
     run_clingo(input_src, output_src)
     data = read_from_asp_result(output_src)
