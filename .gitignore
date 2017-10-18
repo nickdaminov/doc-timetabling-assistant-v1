@@ -4,9 +4,11 @@ clingo-4.5.4-linux-x86_64.tar.gz
 .idea
 # ignore virtualenv/npm packages
 virtualenvfolder
+Frontend/node_modules
 
 # ignore compiled files
 *.pyc
+Frontend/src/client/public
 
 # ignores asp files since they are GPL 3.0 and dont want to be in repo for now
 # you would have only local copies of this
