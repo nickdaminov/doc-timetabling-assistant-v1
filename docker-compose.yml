@@ -20,8 +20,4 @@ services:
       - "8000:8000"
     depends_on:
       - db
-  print_debug:
-    build: .
-    command: echo SERVERON
-    depends_on:
-      - web
+
