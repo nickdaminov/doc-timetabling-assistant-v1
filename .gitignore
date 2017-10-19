@@ -1,0 +1,24 @@
+# ignore current gen clingo tar.gz
+clingo-4.5.4-linux-x86_64.tar.gz
+#ignore IDE files
+.idea
+# ignore virtualenv/npm packages
+virtualenvfolder
+Frontend/node_modules
+
+# ignore compiled files
+*.pyc
+Frontend/src/client/public
+
+# ignores asp files since they are GPL 3.0 and dont want to be in repo for now
+# you would have only local copies of this
+asp/CHANGES
+asp/clingo
+asp/COPYING
+asp/gringo
+asp/reify
+asp/README
+asp/examples
+
+# ignores .out files (results of asp solver)
+*.out

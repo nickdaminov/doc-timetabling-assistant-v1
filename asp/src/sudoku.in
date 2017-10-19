@@ -1,0 +1,37 @@
+#const b = 3. %Block size
+#const n = 9. %Max value
+
+value(1..n).
+sudoku(X,Y,V) :- initial(X,Y,V).
+
+initial(2,3,7). initial(3,3,6). initial(4,3,5). initial(5,3,1).
+initial(6,3,8). initial(7,3,3). initial(8,3,2). initial(9,3,4).
+initial(1,4,3). initial(2,4,6). initial(3,4,2). initial(4,4,4).
+initial(5,4,8). initial(6,4,5). initial(7,4,1). initial(8,4,9).
+initial(9,4,7). initial(1,5,4). initial(2,5,1). initial(3,5,5).
+initial(4,5,9). initial(5,5,6). initial(6,5,7). initial(7,5,8).
+initial(8,5,3). initial(9,5,2). initial(1,6,8). initial(2,6,9).
+initial(3,6,7). initial(4,6,1). initial(5,6,3). initial(6,6,2).
+initial(7,6,4). initial(8,6,5). initial(9,6,6). initial(1,7,5).
+initial(2,7,8). initial(3,7,1). initial(4,7,6). initial(5,7,4).
+initial(6,7,3).
+
+
+% For every value X and Y that don't describe a cell that is initially filled out,
+% choose one value V and generate fact sudoku(X,Y,V)
+1 {sudoku(X,Y,V) : value(V)} 1 :- value(X), value(Y), not initial(X,Y,_).
+
+%Show the pair of coordinates lie in the same block
+sameBlock(X,Y,XX,YY) :- value(X), value(Y), value(XX), value(YY),
+  (X-1)/b == (XX-1)/b, (Y-1)/b == (YY-1)/b.
+
+% Each row may only contains the same value once
+:- sudoku(X,Y,V), sudoku(XX,Y,V), X != XX.
+
+% Each column may only contains the same value once
+:- sudoku(X,Y,V), sudoku(X,YY,V), Y != YY.
+
+% Each block may only contains the same value once
+:- sudoku(X,Y,V), sudoku(XX,YY,V), sameBlock(X,Y,XX,YY), X != XX, Y!= YY.
+
+#show sudoku/3.
