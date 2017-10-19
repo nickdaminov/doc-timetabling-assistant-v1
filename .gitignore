@@ -2,6 +2,7 @@
 clingo-4.5.4-linux-x86_64.tar.gz
 #ignore IDE files
 .idea
+.DS_Store
 # ignore virtualenv/npm packages
 virtualenvfolder
 Frontend/node_modules

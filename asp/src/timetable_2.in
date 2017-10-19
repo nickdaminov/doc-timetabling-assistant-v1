@@ -1,0 +1,26 @@
+%initialise
+%Assume class can start from 9am to 8pm
+start(2..6, 9..18).
+lecturer(a,6).
+lecturer(b,6).
+lecturer(c,6).
+% Generate
+{add(L,D,S): start(D,S)} = R :- lecturer(L,R).
+
+
+%Define
+
+
+
+%Constraints
+% 2 lecturers cannot be on same slot
+:- add(X,D,S), add(Y,D,S), X !=Y.
+
+%Same day class of same lecturer maximum 2 hours
+%If the there is a 2 hour class that day make it consecutive
+:- add(X,D,T), add(X,D,T+Y), Y=2..15.
+
+%Optimisation
+%Make pack as much lessons of the same course on the same day as possible
+#minimize { |D-DD| : add(X,D,S), add(XX,DD,SS) }.
+#show add/3.
