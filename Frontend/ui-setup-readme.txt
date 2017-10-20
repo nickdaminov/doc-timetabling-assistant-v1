@@ -1,10 +1,10 @@
 First, install webpack:
-  
+
   npm i webpack -S
 
 Then, install babel:
 
-  npm i npm i babel-core babel-loader babel-preset-es2015 babel-preset-react -S
+  npm i babel-core babel-loader babel-preset-es2015 babel-preset-react -S
 
 Finally, install react and react-dom:
 
