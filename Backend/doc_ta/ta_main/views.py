@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.http import request, response
+from django.template import loader
 from django.shortcuts import render
 import datetime
 import os
@@ -18,8 +19,14 @@ def run_clingo(input_src, output_src):
 
 
 def test_view(request):
-    input_src = "./asp/src/sudoku.in"
+    input_src = "./asp/src/timetable_2.in"
     output_src = "result.out"
     run_clingo(input_src, output_src)
     data = read_from_asp_result(output_src)
     return response.HttpResponse(content=data, status=200)
+
+
+def get_index(request):
+    template = loader.get_template("index.html")
+    context = {}
+    return response.HttpResponse(template.render(context,request))
