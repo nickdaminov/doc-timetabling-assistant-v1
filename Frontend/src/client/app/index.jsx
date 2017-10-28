@@ -55,7 +55,7 @@ class App extends React.Component {
   render () {
     var rows = this.generateRows(this.state.timetable)
     var timetable = <Timetable rows={rows}/>
-    var saveBtn = <button onclick={this.saveTimetable(this.state.timetable)}>Save</button>
+    var saveBtn = <button onClick={this.saveTimetable(this.state.timetable)}>Save</button>
     return( <div>
             {timetable}
             {saveBtn}
