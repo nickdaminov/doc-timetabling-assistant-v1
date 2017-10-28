@@ -24,8 +24,15 @@ class App extends React.Component {
                               {time: 16, day: "Friday", room: "311", name: "Advanced Databases", type: "lecture"}, , {time: 17, day: "Friday", room: "311", name: "Advanced Databases", type: "lecture"}]};
   }
 
-  saveTimetable(){
-    
+  saveTimetable(timetable){
+    $.ajax({
+      url:"/timetable/save",
+      dataType: "json",
+      data:timetable,
+      success: function(data){
+        //TODO: notify user alert
+      }
+    })
   }
 
   generateRows(data){
