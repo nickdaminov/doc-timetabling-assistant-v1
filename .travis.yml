@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t docTimeTable .
 
 script:
+  - docker build -t docTimeTable .
   - docker-compose run web python Backend/doc_ta/manage.py test
